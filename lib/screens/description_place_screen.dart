@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:viajes_app/screens/review.dart';
 
 //stless
 
@@ -55,13 +56,14 @@ class DescriptionPlaceScreen extends StatelessWidget {
         child: Text(descriptionText,
             style: GoogleFonts.lato(
                 textStyle: const TextStyle(
-              fontSize: 16,
+              fontSize: 13,
             ))));
 
     return Column(
       children: [
         titleAndStars,
         description,
+        const Review(),
       ],
     );
   }
