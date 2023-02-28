@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Review extends StatelessWidget {
-  final String pathProfile = 'assets/img/profile.jpg';
-  const Review({super.key});
+  final String pathProfile;
+  final String user;
+  final String details;
+  final String comments;
+
+  const Review(
+      {super.key,
+      required this.pathProfile,
+      required this.user,
+      required this.details,
+      required this.comments});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +32,62 @@ class Review extends StatelessWidget {
       ),
     );
 
-    return profilePic;
+    final userName = Container(
+      margin: const EdgeInsets.only(
+        left: 20.0,
+      ),
+      child: Text(
+        user,
+        textAlign: TextAlign.left,
+        style: GoogleFonts.lato(
+          fontSize: 17.0,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+
+    final userInfo = Container(
+      margin: const EdgeInsets.only(
+        left: 20.0,
+      ),
+      child: Text(
+        details,
+        textAlign: TextAlign.left,
+        style: GoogleFonts.lato(
+            fontSize: 14.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.blueGrey),
+      ),
+    );
+
+    final userComments = Container(
+      margin: const EdgeInsets.only(
+        left: 20.0,
+      ),
+      child: Text(
+        comments,
+        textAlign: TextAlign.left,
+        style: GoogleFonts.lato(
+          fontSize: 14.0,
+        ),
+      ),
+    );
+
+    final userDetails = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        userName,
+        userInfo,
+        userComments,
+      ],
+    );
+
+    return Row(
+      children: [
+        profilePic,
+        userDetails,
+      ],
+    );
   }
 }
