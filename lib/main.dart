@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:viajes_app/screens/description_place_screen.dart';
+import 'package:viajes_app/screens/reviews.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,14 +16,15 @@ class MainApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: DescriptionPlaceScreen(
+        /*body: DescriptionPlaceScreen(
           descriptionPlace: descriptionText,
           namePlace: namePlace,
           stars: 4,
-        ),
+        ),*/
+        body: Reviews(),
       ),
     );
   }
