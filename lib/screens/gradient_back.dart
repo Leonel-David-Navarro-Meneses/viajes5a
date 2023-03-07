@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GradientBack extends StatelessWidget {
-  const GradientBack({super.key});
+  final String title;
+  const GradientBack({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +14,23 @@ class GradientBack extends StatelessWidget {
           colors: [
             Color.fromARGB(255, 250, 0, 0),
             Color.fromARGB(255, 165, 162, 10),
-            Color.fromARGB(255, 15, 128, 24),
-            Color.fromARGB(255, 145, 207, 109),
           ],
           begin: FractionalOffset(0.2, 0.0),
           end: FractionalOffset(1.0, 0.6),
-          stops: [0.0, 0.6, 0.0, 0.2],
+          stops: [
+            0.0,
+            0.6,
+          ],
           tileMode: TileMode.clamp,
+        ),
+      ),
+      alignment: const Alignment(-0.9, -0.6),
+      child: Text(
+        title,
+        style: GoogleFonts.lato(
+          fontSize: 30.0,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

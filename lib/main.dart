@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:viajes_app/screens/description_place_screen.dart';
+import 'package:viajes_app/screens/header.dart';
 import 'package:viajes_app/screens/reviews.dart';
 import 'package:viajes_app/screens/gradient_back.dart';
 
@@ -31,7 +32,7 @@ class MainApp extends StatelessWidget {
                 const Reviews(),
               ],
             ),
-            const GradientBack(),
+            const Header(),
           ],
         ),
       ),
